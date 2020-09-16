@@ -13,6 +13,7 @@ class TodolistsController < ApplicationController
     redirect_to '/top'
   end
 
+#provateは必ず下に書くこと
   private
   # ストロングパラメータ
   def list_params
