@@ -1,5 +1,10 @@
 <h1>投稿一覧</h1>
 <% @lists.each do |list| %>
   <p>タイトル</p>
-  <span><%= list.title %></span>
+  <!--<span><%= list.title %></span> を削除,変更 -->
+  <!--<span><%= link_to list.title, "/todolists/#{list.id}" %></span>-->
+  <!--「link_to」がHTML上で<a>タグの仕事をしている。-->
+  <span><%= link_to list.title, todolist_path(list.id) %></span>
+  <!--引数でidをしていする書き方もある(list)でも大丈夫。-->
 <% end %>
+
