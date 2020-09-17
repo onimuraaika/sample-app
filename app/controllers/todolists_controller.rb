@@ -5,15 +5,15 @@ class TodolistsController < ApplicationController
   end
   
   def create
-    #①データを新規登録するためのインスタンス作成
-    list = List.new(list_params)
-    #②データをデータベースに保存するためのsaveメソッド実行
+    list = List.new(list_params) #「list_params」はプライベートメソッド。下のprivateで定義されている
+     #①データを新規登録するためのインスタンス作成
     list.save
-    #③トップ画面へリダイレクト
+    #②データをデータベースに保存するためのsaveメソッド実行
     redirect_to '/top'
+    #③トップ画面へリダイレクト
   end
 
-#provateは必ず下に書くこと
+#privateは必ず下に書くこと/ここから下はcontrollerの中でしか呼び出せない
   private
   # ストロングパラメータ
   def list_params
