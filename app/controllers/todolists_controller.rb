@@ -9,8 +9,8 @@ class TodolistsController < ApplicationController
      #①データを新規登録するためのインスタンス作成
     list.save
     #②データをデータベースに保存するためのsaveメソッド実行
-    redirect_to '/top'
-    #③トップ画面へリダイレクト
+    redirect_to todolist_path(list.id)
+    #③詳細表示画面へリダイレクト
   end
   
   def index #データの一覧表示アクションの追加
@@ -21,7 +21,6 @@ class TodolistsController < ApplicationController
     @list = List.find(params[:id])
   end
   
-
 #privateは必ず下に書くこと/ここから下はcontrollerの中でしか呼び出せない
   private
   # ストロングパラメータ
