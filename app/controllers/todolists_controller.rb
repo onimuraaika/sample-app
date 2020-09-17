@@ -12,6 +12,15 @@ class TodolistsController < ApplicationController
     redirect_to '/top'
     #③トップ画面へリダイレクト
   end
+  
+  def index #データの一覧表示アクションの追加
+    @lists = List.all #「@lists」全データ/「List.all」データベースの全データを取り出す
+  end
+  
+  def show
+    @list = List.find(params[:id])
+  end
+  
 
 #privateは必ず下に書くこと/ここから下はcontrollerの中でしか呼び出せない
   private
