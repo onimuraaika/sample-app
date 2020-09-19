@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   post 'todolists' => 'todolists#create' 
   #URL「.../todolists」というURLにpostメソッドでリクエストした時、todolistsコントローラーのcreateアクションが呼び出される。投稿送信
   get 'todolists' => 'todolists#index'
-  get 'todolists' => 'todolists#index'
   #「.../todolists」というURLにpostメソッドでリクエストした時、todolistsコントローラーのindexアクションが呼び出される。一覧表示。
   get 'todolists/:id' => 'todolists#show', as: 'todolist'
   #「.../todolists/:1とか/:2とか」URLにgetメソッドでリクエストした時、todolistsコントローラのshowアクションが呼び出される。詳細表示。
-  #「as:」でこのルートに「todolist」という名前をつけた。
+  #「as:」でこの操作に「todolist」というあだ名をつけた。
 end
