@@ -18,16 +18,16 @@ class TodolistsController < ApplicationController
   end
   
   def show #データの詳細表示アクションの追加
-      @list = List.find(params[:id]) #「Listモデルのものを探し出して、何を➡(paramsの[id番目の情報、つまりデータ1つだけ])を」それを@listに入れてViewファイルまで届ける。
+      @list = List.find(params[:id]) #送られてきたid番目の情報ひとつを探し出して、それを@listに入れてViewファイルまで届ける。
   end
   
   def edit
-      @list = List.find(params[:id])
+      @list = List.find(params[:id]) #編集対象データは「モデル名.find(params[:id])」で取得する。「params」はRailsで送られてきた値を受け取るためのメソッド。
   end
   
   def update
       list = List.find(params[:id])
-      list.update(list_params)
+      list.update(list_params) #.updateは更新するメソッド。
       redirect_to todolist_path(list.id)
   end
   

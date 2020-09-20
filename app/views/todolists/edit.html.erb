@@ -1,6 +1,8 @@
 <h1>編集画面</h1>
 
 <%= form_with model:@list, url:"/todolists/#{@list.id}", local:true do |f| %>
+<!--通常のフォーム送信は「local:true」で指定-->
+<!--form_withを利用すると、モデルを渡すだけで編集したいデータを自動的に代入してくれる。-->
   <h4>タイトル</h4>
   <%= f.text_field :title %>
   <h4>本文</h4>
