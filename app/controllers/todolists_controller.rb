@@ -21,10 +21,19 @@ class TodolistsController < ApplicationController
       @list = List.find(params[:id]) #「Listモデルのものを探し出して、何を➡(paramsの[id番目の情報、つまりデータ1つだけ])を」それを@listに入れてViewファイルまで届ける。
   end
   
-#privateは必ず下に書くこと/ここから下はcontrollerの中でしか呼び出せない
-  private #ストロングパラメータ
-  def list_params
-    params.require(:list).permit(:title, :body)
+  def edit
+      @list = List.find(params[:id])
   end
   
+  def update
+      list = List.find(params[:id])
+      list.update(list_params)
+      redirect_to todolist_path(list.id)
+  end
+  
+   #privateは必ず下に書くこと/ここから下はcontrollerの中でしか呼び出せない
+  private #ストロングパラメータ
+  def list_params
+      params.require(:list).permit(:title, :body)
+  end
 end

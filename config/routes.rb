@@ -10,4 +10,10 @@ Rails.application.routes.draw do
   get 'todolists/:id' => 'todolists#show', as: 'todolist'
   #「.../todolists/:1とか/:2とか」URLにgetメソッドでリクエストした時、todolistsコントローラのshowアクションが呼び出される。詳細表示。
   #「as:」でこの操作に「todolist」というあだ名をつけた。
+  get 'todolists/:id/edit' => 'todolists#edit', as: 'edit_todolist'
+  #「.../todolists/:id/edit」URLにgetメソッドでリクエストした時、todolistsコントローラのeditアクションが呼び出される。編集画面表示。
+  #あだ名は「edit_todolist」
+  patch 'todolists/:id' => 'todolists#update', as: 'update_todolist'
+  #「patch」は更新。「todolists/:id」URLにpatchメソッドでリクエストした時、todolistsコントローラーのupdateアクションが呼び出される。データの更新
+  #あだ名は「update_todolist」
 end
