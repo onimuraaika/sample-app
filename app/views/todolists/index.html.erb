@@ -6,5 +6,7 @@
   <span><%= link_to list.title, todolist_path(list.id) %></span>
   <!--「link_to」はHTML上で<a>タグの仕事をしている。-->
   <!--引数でidを指定する書き方もある(list)でも大丈夫。-->
+  <p>画像</p>
+  <%= attachment_image_tag list, :image, :fill, 100, 100, format: 'jpeg' %>
 <% end %>
 
