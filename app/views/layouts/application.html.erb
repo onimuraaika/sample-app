@@ -10,6 +10,27 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1 class="headline"> All Lists </h1>
+    </header>
+    
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-list-item">
+          <%= link_to "Top", top_path %> <!--Topボタンを押すとコップ画面に飛ぶリンク設定-->
+        </li>
+        <li class="nav-list-item">
+          <%= link_to "Todolists", todolists_path %> <!--Todolistsボタンを押すと一覧表示に飛ぶリンク設定-->
+        </li>
+        <li class="nav-list-item">
+          <%= link_to "New List", todolists_new_path %> <!--New Listボタンを押すと新規投稿作成画面に飛ぶリンク設定-->
+        </li>
+      </ul>
+    </nav>
+    
+    <main>
+      <%= yield %>
+    </main>
+    
   </body>
 </html>
