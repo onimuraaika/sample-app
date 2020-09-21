@@ -1,0 +1,11 @@
+<div class="list-wrap">
+  <% @lists.each do |list| %> <!--listsテーブル内の情報を順番に表示-->
+    <div class="list-box">
+        <%= attachment_image_tag list, :image, :fill, 200, 200, format: 'jpeg' %> <!--画像表示のコード-->
+        <div class="list-comment">
+          <span class="list-body"><%= list.body %></span> <!--「<%= list.body %>」Listモデル内bodyカラムの中のデータを呼び出す-->
+          <span class="list-title"><%=link_to list.title, todolist_path(list.id) %></span> <!--詳細表示に飛ぶリンク-->
+        </div>
+    </div>
+  <% end %>
+</div>
