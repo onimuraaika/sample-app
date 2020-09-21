@@ -80,6 +80,17 @@ main {
 }
 
 .list-body {
+  display: block;
   color: gray;
+  font-size: 12px;
+  white-space: nowrap; /*テキストを折り返し表示させないようにするプロパティ*/
+  text-overflow: ellipsis; /*領域をはみ出したテキストを「...」で省略表示するプロパティ*/
+}
+
+.list-title {
+  display: block;
   font-size: 18px;
+  overflow: hidden; /*要素のボックスからはみ出る部分を見えなくするプロパティ*/
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
