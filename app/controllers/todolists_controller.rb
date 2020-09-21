@@ -31,6 +31,12 @@ class TodolistsController < ApplicationController
       redirect_to todolist_path(list.id)
   end
   
+  def destroy
+      list = List.find(params[:id]) #Listモデルのidをひとつ探してきて。
+      list.destroy #「.destroy」は削除するメソッド。
+      redirect_to todolists_path #一覧表示にredirectして。
+  end
+  
    #privateは必ず下に書くこと/ここから下はcontrollerの中でしか呼び出せない
   private #ストロングパラメータ
   def list_params
